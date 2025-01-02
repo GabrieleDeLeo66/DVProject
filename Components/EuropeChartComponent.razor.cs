@@ -5,7 +5,7 @@ using Microsoft.JSInterop;
 
 namespace DVProject.Components
 {
-    public partial class EuropeChartComponent
+    public partial class EuropeChartComponent : ComponentBase
     {
         private DateTime? _date = DateTime.Parse("2022-02-17");
         protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -13,6 +13,7 @@ namespace DVProject.Components
             await base.OnAfterRenderAsync(firstRender);
             if (firstRender)
             {
+                await Task.Delay(1000);
                 await JS.InvokeVoidAsync("MapEurope", _date?.ToString("yyyy-MM-dd"));
             }
         }
