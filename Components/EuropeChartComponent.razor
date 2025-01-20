@@ -226,7 +226,7 @@
 
 <h1 style="font-family: Cambria">Covid Night-teen Fever - an ill Europe</h1>
 
-<MudDatePicker Label="Selected Date" MinDate=@DateTime.Parse("2020-03-20") MaxDate="@DateTime.Parse("2022-02-17")" Date="_date" DateChanged="@((d) => OnDateChanged(d))"/>
+<MudDatePicker IsDateDisabledFunc="@((DateTime dt)=>((int)dt.DayOfWeek > 0 && (int)dt.DayOfWeek < 7))" Label="Selected Date" MinDate=@DateTime.Parse("2020-01-05") MaxDate="@DateTime.Parse("2024-08-04")" Date="_date" DateChanged="@((d) => OnDateChanged(d))" />
 
 <div class="container">
     <div class="row">

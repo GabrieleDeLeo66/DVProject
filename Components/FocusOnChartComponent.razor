@@ -68,8 +68,8 @@
         xAxis = chart.xAxes.push(
             am5xy.DateAxis.new(root, {
                 baseInterval: { timeUnit: "day", count: 1 },
-                min: new Date(2020, 03, 20).getTime(),
-                max: new Date(2022, 02, 17).getTime(),
+                min: new Date(2020, 01, 05).getTime(),
+                max: new Date(2024, 08, 04).getTime(),
                 maxDeviation: 1,
                 renderer: am5xy.AxisRendererX.new(root, {
                     pan: "zoom"
@@ -83,7 +83,7 @@
 
         d3.queue()
             .defer(d3.csv, "/data/owid-covid-data-Europe.csv", function (d) {
-                if (d.location != "Europe" && d.location != "European Union") {
+                if (d.location != "Europe" && d.location != "European Union" && d.location != "European Union (27)") {
                     element = {
                         "date": d.date,
                         "location": d.location,

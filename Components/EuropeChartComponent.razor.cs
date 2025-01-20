@@ -7,13 +7,13 @@ namespace DVProject.Components
 {
     public partial class EuropeChartComponent : ComponentBase
     {
-        private DateTime? _date = DateTime.Parse("2022-02-17");
+        private DateTime? _date = DateTime.Parse("2021-01-10");
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             await base.OnAfterRenderAsync(firstRender);
             if (firstRender)
             {
-                await Task.Delay(1000);
+                await Task.Delay(2000);
                 await JS.InvokeVoidAsync("MapEurope", _date?.ToString("yyyy-MM-dd"));
             }
         }
